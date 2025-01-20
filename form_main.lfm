@@ -61,12 +61,12 @@ object fmMain: TfmMain
     Left = 235
     Top = 81
     object mnuTextUndo: TMenuItem
-      Caption = 'Undo'
+      Caption = '撤销'
       ShortCut = 16474
       OnClick = mnuTextUndoClick
     end
     object mnuTextRedo: TMenuItem
-      Caption = 'Redo'
+      Caption = '重做'
       ShortCut = 24666
       OnClick = mnuTextRedoClick
     end
@@ -74,29 +74,29 @@ object fmMain: TfmMain
       Caption = '-'
     end
     object mnuTextCut: TMenuItem
-      Caption = 'Cu&t'
+      Caption = '剪切(&T)'
       ShortCut = 16472
       OnClick = mnuTextCutClick
     end
     object mnuTextCopy: TMenuItem
-      Caption = '&Copy'
+      Caption = '复制(&C)'
       ShortCut = 16451
       OnClick = mnuTextCopyClick
     end
     object mnuTextPaste: TMenuItem
-      Caption = '&Paste'
+      Caption = '粘贴(&P)'
       ShortCut = 16470
       OnClick = mnuTextPasteClick
     end
     object mnuTextDelete: TMenuItem
-      Caption = '&Delete'
+      Caption = '删除(&D)'
       OnClick = mnuTextDeleteClick
     end
     object MenuItem5: TMenuItem
       Caption = '-'
     end
     object mnuTextSel: TMenuItem
-      Caption = 'Select &all'
+      Caption = '全选(&A)'
       ShortCut = 16449
       OnClick = mnuTextSelClick
     end
@@ -104,12 +104,12 @@ object fmMain: TfmMain
       Caption = '-'
     end
     object mnuTextUpperCase: TMenuItem
-      Caption = '&Upper Case'
+      Caption = '大写(&U)'
       ShortCut = 16469
       OnClick = mnuTextUpperCaseClick
     end
     object mnuTextLowerCase: TMenuItem
-      Caption = '&Lower Case'
+      Caption = '小写(&L)'
       ShortCut = 24661
       OnClick = mnuTextLowerCaseClick
     end
@@ -117,18 +117,18 @@ object fmMain: TfmMain
       Caption = '-'
     end
     object mnuTextGoto: TMenuItem
-      Caption = '&Go to...'
+      Caption = '转到...(&G)'
       ShortCut = 16455
       OnClick = mnuTextGotoClick
     end
     object mnuTextReadonly: TMenuItem
-      Caption = '&Read-only'
+      Caption = '只读(&R)'
       Checked = True
       ShortCut = 16466
       OnClick = mnuTextReadonlyClick
     end
     object mnuTextSave: TMenuItem
-      Caption = '&Save'
+      Caption = '保存(&S)'
       ShortCut = 16467
       OnClick = mnuTextSaveClick
     end
@@ -136,16 +136,16 @@ object fmMain: TfmMain
       Caption = '-'
     end
     object mnuOptions: TMenuItem
-      Caption = '&Options dialog...'
+      Caption = '选项...(&O)'
       OnClick = mnuOptionsClick
     end
     object mnuWrap: TMenuItem
-      Caption = '&Word wrap'
+      Caption = '换行(&W)'
       ShortCut = 16471
       OnClick = mnuWrapClick
     end
     object mnuFind: TMenuItem
-      Caption = '&Find...'
+      Caption = '查找...(&F)'
       ShortCut = 16454
       OnClick = mnuFindClick
     end

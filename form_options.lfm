@@ -5,7 +5,7 @@ object fmOptions: TfmOptions
   Width = 702
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = 'CudaLister options'
+  Caption = 'CudaLister 选项'
   ClientHeight = 404
   ClientWidth = 702
   OnShow = FormShow
@@ -28,7 +28,7 @@ object fmOptions: TfmOptions
     Height = 25
     Top = 8
     Width = 172
-    Caption = 'Font...'
+    Caption = '字体...'
     OnClick = btnFontClick
     TabOrder = 0
   end
@@ -44,7 +44,7 @@ object fmOptions: TfmOptions
     Anchors = [akRight, akBottom]
     BorderSpacing.Around = 6
     Cancel = True
-    Caption = 'Close'
+    Caption = '关闭'
     Default = True
     OnClick = btnCloseClick
     TabOrder = 23
@@ -56,7 +56,7 @@ object fmOptions: TfmOptions
     Top = 110
     Width = 407
     BorderSpacing.Top = 2
-    Caption = 'Line numbers'
+    Caption = '行号'
     ClientHeight = 36
     ClientWidth = 403
     TabOrder = 3
@@ -67,7 +67,7 @@ object fmOptions: TfmOptions
       Height = 19
       Top = 9
       Width = 30
-      Caption = 'all'
+      Caption = '全部'
       Checked = True
       OnChange = chkNumsAllChange
       TabOrder = 0
@@ -80,7 +80,7 @@ object fmOptions: TfmOptions
       Height = 19
       Top = 9
       Width = 45
-      Caption = 'none'
+      Caption = '不显示'
       OnChange = chkNumsNoneChange
       TabOrder = 1
     end
@@ -91,7 +91,7 @@ object fmOptions: TfmOptions
       Height = 19
       Top = 9
       Width = 69
-      Caption = 'each 10th'
+      Caption = '每 10 行'
       OnChange = chkNums10Change
       TabOrder = 2
     end
@@ -102,7 +102,7 @@ object fmOptions: TfmOptions
       Height = 19
       Top = 9
       Width = 63
-      Caption = 'each 5th'
+      Caption = '每 5 行'
       OnChange = chkNums5Change
       TabOrder = 3
     end
@@ -111,7 +111,7 @@ object fmOptions: TfmOptions
       Height = 19
       Top = 9
       Width = 56
-      Caption = 'relative'
+      Caption = '相对'
       OnChange = chkNumRelativeChange
       TabOrder = 4
     end
@@ -121,7 +121,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 10
     Width = 131
-    Caption = 'Tab key enters spaces'
+    Caption = 'Tab 输入空格'
     OnChange = chkTabSpacesChange
     TabOrder = 10
   end
@@ -130,7 +130,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 35
     Width = 139
-    Caption = 'Unprinted: spaces/tabs'
+    Caption = '显示非打印字符: 空格 / 制表符'
     OnChange = chkUnprintedSpaceChange
     TabOrder = 11
   end
@@ -139,7 +139,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 60
     Width = 138
-    Caption = 'Unprinted: end of lines'
+    Caption = '显示非打印字符: 换行符'
     OnChange = chkUnprintedEndsChange
     TabOrder = 12
   end
@@ -148,7 +148,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 85
     Width = 66
-    Caption = 'Minimap'
+    Caption = '迷你地图'
     OnChange = chkMinimapChange
     TabOrder = 13
   end
@@ -157,7 +157,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 233
     Width = 318
-    Caption = 'No caret, scroll by arrows/Home/End/Space/Shift+Space'
+    Caption = '不显示光标, 用 Arrows/Home/End/Space/Shift+Space 滚动'
     OnChange = chkNoCaretChange
     TabOrder = 5
   end
@@ -166,7 +166,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 258
     Width = 217
-    Caption = 'Allow opening only for files with lexer'
+    Caption = '仅允许使用 lexer 打开文件'
     OnChange = chkOnlyKnownChange
     TabOrder = 6
   end
@@ -175,7 +175,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 160
     Width = 152
-    Caption = 'Open URL by simple click'
+    Caption = '通过单击打开 URL'
     OnChange = chkClickLinkChange
     TabOrder = 17
   end
@@ -184,7 +184,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 85
     Width = 107
-    Caption = 'Minimap: tooltip'
+    Caption = '迷你地图: 工具提示'
     OnChange = chkMinimapTooltipChange
     TabOrder = 14
   end
@@ -193,7 +193,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 135
     Width = 125
-    Caption = 'Gutter: folding band'
+    Caption = '页边: 折叠栏'
     OnChange = chkGutterFoldChange
     TabOrder = 16
   end
@@ -202,7 +202,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 283
     Width = 178
-    Caption = 'Use UTF-8 as default encoding'
+    Caption = '使用 UTF-8 作为默认编码'
     OnChange = chkEncUtf8Change
     TabOrder = 7
   end
@@ -211,7 +211,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 185
     Width = 148
-    Caption = 'Copy line if none selected'
+    Caption = '如果未选择则复制整行'
     OnChange = chkCopyLineChange
     TabOrder = 18
   end
@@ -223,7 +223,7 @@ object fmOptions: TfmOptions
     Top = 168
     Width = 407
     BorderSpacing.Top = 2
-    Caption = 'Tab size'
+    Caption = 'Tab 宽度'
     ClientHeight = 36
     ClientWidth = 403
     TabOrder = 4
@@ -292,21 +292,21 @@ object fmOptions: TfmOptions
     Height = 15
     Top = 319
     Width = 132
-    Caption = 'Max file size to open, Mb'
+    Caption = '打开的最大文件大小, Mb'
   end
   object Label3: TLabel
     Left = 190
     Height = 15
     Top = 60
     Width = 70
-    Caption = '(need restart)'
+    Caption = '(需要重启)'
   end
   object btnThemeUi: TButton
     Left = 8
     Height = 25
     Top = 40
     Width = 172
-    Caption = 'Theme - UI...'
+    Caption = '主题 - UI...'
     OnClick = btnThemeUiClick
     TabOrder = 1
   end
@@ -315,7 +315,7 @@ object fmOptions: TfmOptions
     Height = 25
     Top = 72
     Width = 172
-    Caption = 'Theme - syntax...'
+    Caption = '主题 - 语法...'
     OnClick = btnThemeSyntaxClick
     TabOrder = 2
   end
@@ -324,7 +324,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 210
     Width = 128
-    Caption = 'Show last line on top'
+    Caption = '在顶部显示最后一行'
     OnChange = chkLastOnTopChange
     TabOrder = 19
   end
@@ -333,7 +333,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 110
     Width = 134
-    Caption = 'Gutter: numbers band'
+    Caption = '页边: 行号栏'
     OnChange = chkGutterNumsChange
     TabOrder = 15
   end
@@ -342,7 +342,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 233
     Width = 149
-    Caption = 'Allow caret after line end'
+    Caption = '允许在行尾后插入'
     OnChange = chkCaretVirtualChange
     TabOrder = 20
   end
@@ -351,7 +351,7 @@ object fmOptions: TfmOptions
     Height = 19
     Top = 256
     Width = 134
-    Caption = 'Word-wrap by default'
+    Caption = '默认自动换行'
     OnChange = chkWrapChange
     TabOrder = 21
   end
@@ -370,14 +370,14 @@ object fmOptions: TfmOptions
     Height = 15
     Top = 347
     Width = 166
-    Caption = 'Caret proximity to vertical edge'
+    Caption = '光标接近垂直边缘'
   end
   object chkNewScroll: TCheckBox
     Left = 424
     Height = 19
     Top = 280
     Width = 125
-    Caption = 'Show new scrollbars'
+    Caption = '使用新式滚动条'
     OnChange = chkNewScrollChange
     TabOrder = 22
   end

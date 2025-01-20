@@ -447,7 +447,7 @@ begin
   if (Key=VK_F2) and (Shift=[]) then
   begin
     if ed.Modified then
-      if MessageBox(Handle, 'File is modified. Are you sure you want to reload it from disk?', 'CudaLister',
+      if MessageBox(Handle, '文件已经被修改. 您确定要从磁盘重新加载它吗?', 'CudaLister',
         MB_OKCANCEL or MB_ICONWARNING)=ID_OK then
         ed.LoadFromFile(FFileName, []);
     Key:= 0;
@@ -563,7 +563,7 @@ begin
   //support Ctrl+G
   if (Key=VK_G) and (Shift=[ssCtrl]) then
   begin
-    S:= InputBox('Go to', 'Line number:', '');
+    S:= InputBox('转到', '行号:', '');
     if S='' then exit;
     N:= StrToIntDef(S, 0);
     Dec(N);
@@ -577,10 +577,10 @@ begin
         true,
         TATEditorActionIfFolded.Unfold
         );
-      MsgStatus('Go to line '+IntToStr(N));
+      MsgStatus('转到行 '+IntToStr(N));
     end
     else
-      MsgStatus('Incorrect line number: '+S);
+      MsgStatus('行号不正确: '+S);
     Key:= 0;
     exit
   end;
@@ -603,7 +603,7 @@ begin
       ed.SaveToFile(FFileName);
       ed.Modified:= false;
     except
-      MsgBox('Cannot save file', MB_OK or MB_ICONERROR);
+      MsgBox('无法保存文件', MB_OK or MB_ICONERROR);
     end;
   end;
 
@@ -809,12 +809,12 @@ begin
         begin
           cnt:= Finder.DoAction_ReplaceAll;
           FinderUpdateEditor(true);
-          MsgStatus('Replaces made: '+Inttostr(cnt));
+          MsgStatus('已替换 '+Inttostr(cnt)+' 处.');
         end;
       mrIgnore: //count all
         begin
           cnt:= Finder.DoAction_CountAll(false);
-          MsgStatus('Count of "'+Utf8Encode(Finder.StrFind)+'": '+Inttostr(cnt));
+          MsgStatus('共计找到 "'+Utf8Encode(Finder.StrFind)+'": '+Inttostr(cnt)+' 处.');
         end;
       mrRetry: //mark all
         begin
@@ -823,7 +823,7 @@ begin
           cnt:= Finder.DoAction_CountAll(true);
           FindMarkAll:= false;
           FinderUpdateEditor(false);
-          MsgStatus('Markers placed: '+Inttostr(cnt));
+          MsgStatus('已标记 '+Inttostr(cnt)+' 处.');
         end;
     end;
   finally
@@ -874,8 +874,8 @@ begin
     Buttons:= Buttons+[mbYesToAll, mbNoToAll];
   //Str:= Ed.Strings.TextSubstring(APos1.X, APos1.Y, APos2.X, APos2.Y);
   Res:= MessageDlg(
-    'Confirm replace',
-    'Replace string at line '+Inttostr(APos1.Y+1),
+    '确认替换',
+    '替换字符串在第 '+Inttostr(APos1.Y+1)+' 行.',
     mtConfirmation,
     Buttons, '');
 
@@ -925,12 +925,12 @@ begin
   if (FFileName<>'') and ed.Modified then
   begin
     ed.Modified:= false;
-    case MsgBox('File was modified. Save it?', MB_YESNOCANCEL or MB_ICONQUESTION) of
+    case MsgBox('文件已经被修改. 是否保存?', MB_YESNOCANCEL or MB_ICONQUESTION) of
       ID_YES:
        try
          ed.SaveToFile(FFileName);
        except
-         MsgBox('Cannot save file', MB_OK or MB_ICONERROR);
+         MsgBox('无法保存文件', MB_OK or MB_ICONERROR);
        end;
        ID_CANCEL:
          exit;
@@ -1060,7 +1060,7 @@ var
   S: string;
   N: integer;
 begin
-  S:= InputBox('Go to', 'Line number:', '');
+  S:= InputBox('转到', '行号:', '');
   if S='' then exit;
   N:= StrToIntDef(S, 0);
   Dec(N);
@@ -1074,10 +1074,10 @@ begin
       true,
       TATEditorActionIfFolded.Unfold
       );
-    MsgStatus('Go to line '+IntToStr(N));
+    MsgStatus('转到行 '+IntToStr(N));
   end
   else
-    MsgStatus('Incorrect line number: '+S);
+    MsgStatus('行号不正确: '+S);
 end;
 
 procedure TfmMain.mnuTextUndoClick(Sender: TObject);
@@ -1162,7 +1162,7 @@ begin
       ed.SaveToFile(FFileName);
       ed.Modified:= false;
     except
-      MsgBox('Cannot save file', MB_OK or MB_ICONERROR);
+      MsgBox('无法保存文件', MB_OK or MB_ICONERROR);
     end;
 end;
 
@@ -1320,7 +1320,7 @@ begin
   begin
     Caret:= ed.Carets[0];
     StatusBar.Captions[StatusbarIndex_Caret]:=
-      Format('Line %d, Col %d', [Caret.PosY+1, Caret.PosX+1]);
+      Format('行 %d, 列 %d', [Caret.PosY+1, Caret.PosX+1]);
   end;
 
   StatusBar.Captions[StatusbarIndex_Enc]:= GetEncodingName;
@@ -1341,20 +1341,20 @@ begin
 
   case ed.OptWrapMode of
     TATEditorWrapMode.ModeOff:
-      S:= 'No wrap';
+      S:= '未换行';
     else
-      S:= 'Wrap';
+      S:= '换行';
   end;
   StatusBar.Captions[StatusbarIndex_Wrap]:= S;
 
   if ed.ModeReadOnly then
-    S:= 'Read only'
+    S:= '只读'
   else
-    S:= 'Read/write';
+    S:= '读写';
   StatusBar.Captions[StatusbarIndex_ReadWrite]:= S;
 
   StatusBar.Captions[StatusbarIndex_UndoRedo]:=
-    Format('Undo: %d, Redo: %d', [ed.UndoCount, ed.RedoCount]);
+    Format('撤销: %d, 重做: %d', [ed.UndoCount, ed.RedoCount]);
 end;
 
 

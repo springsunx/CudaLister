@@ -9,7 +9,7 @@ uses
   StrUtils,
   IniFiles,
   file_proc,
-  form_main,
+  form_main, form_find,
   form_options, proc_themes, form_listbox;
 
 const
@@ -104,7 +104,7 @@ type
 
 procedure ListSetDefaultParams(dps: pListDefaultParamStruct); stdcall;
 begin
-  ListerIniFilename:= string(dps^.DefaultIniName);
+  ListerIniFilename:= ChangeFileExt(_GetDllFilename, '.ini');
 end;
 
 function ListLoadNextW(ParentWin, ListWin: HWND;
